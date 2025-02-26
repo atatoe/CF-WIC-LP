@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women in Crypto - Landing Page</title>
+  <!-- Google Font for Futuristic Look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" 
+    rel="stylesheet"
+  >
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d; /* Dark background for futuristic feel */
+      color: #ffffff;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Navbar Styles */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(45deg, #3f0092, #852acc);
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li {
+      transition: transform 0.3s;
+    }
+    .nav-links li:hover {
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: url('https://via.placeholder.com/1500x800/111111/FFFFFF?text=Women+in+Crypto+Background') center/cover no-repeat;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #e933ff;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    .hero button {
+      padding: 1rem 2rem;
+      background: #e933ff;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius: 4px;
+    }
+    .hero button:hover {
+      background: #c42cd1;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .services h2 {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .service-card {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card h3 {
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #2a2a2a;
+    }
+    .pricing h2 {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .pricing-card {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card:hover {
+      box-shadow: 0 0 10px #e933ff;
+    }
+    .pricing-card h3 {
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: #e933ff;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .pricing-card li {
+      margin: 0.5rem 0;
+    }
+    .pricing-card button {
+      padding: 0.8rem 1.5rem;
+      background: #e933ff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .pricing-card button:hover {
+      background: #c42cd1;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .contact h2 {
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 4px;
+      background: #1e1e1e;
+      color: #fff;
+      outline: none;
+    }
+    .contact-form button {
+      padding: 1rem;
+      background: #e933ff;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover {
+      background: #c42cd1;
+    }
+
+    /* Footer */
+    footer {
+      background: #111111;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+    footer p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">WomenInCrypto</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Empower Your Future in Crypto</h1>
+    <p>
+      Join our exclusive cryptocurrency trading training designed for women who want to take charge of their financial freedom. Learn, grow, and excel in the world of digital assets.
+    </p>
+    <button onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'});">
+      Get Started
+    </button>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Beginner’s Guide</h3>
+        <p>Step-by-step introduction to blockchain, Bitcoin, and other cryptocurrencies. Perfect for newcomers who want a solid foundation.</p>
+      </div>
+      <div class="service-card">
+        <h3>Advanced Trading</h3>
+        <p>Deep dive into technical analysis, trading strategies, and portfolio management for those ready to level up.</p>
+      </div>
+      <div class="service-card">
+        <h3>One-on-One Coaching</h3>
+        <p>Personalized mentorship with industry experts, tailored to your goals and experience level.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-cards">
+      <!-- Basic Plan -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <p class="price">$49</p>
+        <ul>
+          <li>Intro to Crypto Trading</li>
+          <li>Basic Technical Analysis</li>
+          <li>Access to Private Community</li>
+        </ul>
+        <button>Sign Up</button>
+      </div>
+      <!-- Pro Plan -->
+      <div class="pricing-card">
+        <h3>Pro</h3>
+        <p class="price">$99</p>
+        <ul>
+          <li>All Basic Features</li>
+          <li>Advanced Trading Strategies</li>
+          <li>Weekly Live Webinars</li>
+        </ul>
+        <button>Sign Up</button>
+      </div>
+      <!-- Elite Plan -->
+      <div class="pricing-card">
+        <h3>Elite</h3>
+        <p class="price">$199</p>
+        <ul>
+          <li>All Pro Features</li>
+          <li>1-on-1 Coaching</li>
+          <li>Priority Support</li>
+        </ul>
+        <button>Sign Up</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or ready to enroll? Send us a message!</p>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 WomenInCrypto. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
